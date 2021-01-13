@@ -1,5 +1,6 @@
 {
     "name": "dev/treinamento",
+    "description": "description",
     "autoload":{
         "psr-4":{
             "App\\":"classes/"
