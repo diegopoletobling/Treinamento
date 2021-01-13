@@ -52,43 +52,43 @@
     <div class="container mt-4">
             <div class="form-check-inline">
                 <label class="form-check-label" for="check1">
-                <input type="checkbox" class="form-check-input" id="check1" name="aarCondicionado"> Ar Condionado
+                <input type="checkbox" class="form-check-input" id="check1" name="aarCondicionado" value="s"> Ar Condionado
                 </label>
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check2">
-                <input type="checkbox" class="form-check-input" id="check2" name="airBag"> Air Bag
+                <input type="checkbox" class="form-check-input" id="check2" name="airBag" value="s"> Air Bag
                 </label>
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check3">
-                <input type="checkbox" class="form-check-input" id="check3" name="cdPlayer"> CD Player
+                <input type="checkbox" class="form-check-input" id="check3" name="cdPlayer" value="s"> CD Player
                 </label>
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check4">
-                <input type="checkbox" class="form-check-input" id="check4" name="direcaoHidraulica"> Direção Hidráulica
+                <input type="checkbox" class="form-check-input" id="check4" name="direcaoHidraulica" value="s"> Direção Hidráulica
                 </label>
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check5">
-                <input type="checkbox" class="form-check-input" id="check5" name="vidroEletrico"> Vidro Elétrico
+                <input type="checkbox" class="form-check-input" id="check5" name="vidroEletrico" value="s"> Vidro Elétrico
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check6">
-                <input type="checkbox" class="form-check-input" id="check6" name="travaEletrica"> Trava Elétrica
+                <input type="checkbox" class="form-check-input" id="check6" name="travaEletrica" value="s"> Trava Elétrica
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check7">
-                <input type="checkbox" class="form-check-input" id="check7" name="cambioAutomatico"> Câmbio Automático
+                <input type="checkbox" class="form-check-input" id="check7" name="cambioAutomatico" value="s"> Câmbio Automático
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check8">
-                <input type="checkbox" class="form-check-input" id="check8" name="rodasLiga"> Rodas de liga
+                <input type="checkbox" class="form-check-input" id="check8" name="rodasLiga" value="s"> Rodas de liga
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check9">
-                <input type="checkbox" class="form-check-input" id="check9" name="alarme"> Alarme
+                <input type="checkbox" class="form-check-input" id="check9" name="alarme" value="s"> Alarme
             </div>
     </div>
 

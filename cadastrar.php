@@ -12,26 +12,26 @@ if(isset($_POST['descricao']))
 
     $obcarro = new Carro;
     $obcarro->descricao         = addslashes($_POST['descricao']);
-    $obcarro->placa             = $_POST['placa'];
-    $obcarro->codigoRenavam     = $_POST['codigoRenavam'];
-    $obcarro->anoModelo         = $_POST['anoModelo'];
-    $obcarro->anoFrabricacao    = $_POST['anoFabricacao'];
-    $obcarro->cor               = $_POST['cor'];
-    $obcarro->km                = $_POST['km'];
-    $obcarro->marca             = $_POST['marca'];
-    $obcarro->preco             = $_POST['preco'];
-    $obcarro->precoFipe         = $_POST['precoFipe'];
-    $obcarro->arCondicionado    = $_POST['arCondicionado'];
-    $obcarro->airBag            = $_POST['airBag'];
-    $obcarro->cdPlayer          = $_POST['cdPlayer'];
-    $obcarro->direcaoHidraulica = $_POST['direcaoHidraulica'];
-    $obcarro->vidroEletrico     = $_POST['vidroEletrico'];
-    $obcarro->travaEletrica     = $_POST['travaEletrica'];
-    $obcarro->cambioAutomatico  = $_POST['cambioAutomatico'];
-    $obcarro->alarme            = $_POST['alarme'];
-    $obcarro->rodasLiga         = $_POST['rodasLiga'];
+    $obcarro->placa             = addslashes($_POST['placa']);
+    $obcarro->codigoRenavam     = addslashes($_POST['codigoRenavam']);
+    $obcarro->anoModelo         = addslashes($_POST['anoModelo']);
+    $obcarro->anoFrabricacao    = addslashes($_POST['anoFabricacao']);
+    $obcarro->cor               = addslashes($_POST['cor']);
+    $obcarro->km                = addslashes($_POST['km']);
+    $obcarro->marca             = addslashes($_POST['marca']);
+    $obcarro->preco             = addslashes($_POST['preco']);
+    $obcarro->precoFipe         = addslashes($_POST['precoFipe']);
+    $obcarro->arCondicionado    = addslashes($_POST['arCondicionado']);
+    $obcarro->airBag            = addslashes($_POST['airBag']);
+    $obcarro->cdPlayer          = addslashes($_POST['cdPlayer']);
+    $obcarro->direcaoHidraulica = addslashes($_POST['direcaoHidraulica']);
+    $obcarro->vidroEletrico     = addslashes($_POST['vidroEletrico']);
+    $obcarro->travaEletrica     = addslashes($_POST['travaEletrica']);
+    $obcarro->cambioAutomatico  = addslashes($_POST['cambioAutomatico']);
+    $obcarro->alarme            = addslashes($_POST['alarme']);
+    $obcarro->rodasLiga         = addslashes($_POST['rodasLiga']);
 
-    echo "<pre>"; print_r($obcarro); echo "</pre>"; exit;
+    $obcarro->Cadastrar();
 }
 
 include __DIR__.'/includes/header.php';

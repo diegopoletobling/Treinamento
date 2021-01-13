@@ -2,7 +2,10 @@
 
 namespace classes\Entity;
 
-class Carro{
+use classes\Db\Database;
+
+class Carro
+{
 
     /**
      * Identificador único de carro
@@ -22,10 +25,10 @@ class Carro{
      */
     public $placa;
 
-   /**
-    * Código RENAVAM
-    * @var string
-    */
+    /**
+     * Código RENAVAM
+     * @var string
+     */
     public $codigoRenavam;
 
     /**
@@ -33,7 +36,7 @@ class Carro{
     * @var int
     */
     public $anoModelo;
-  
+
     /**
     * ano de fabricação do veículo
     * @var int
@@ -124,5 +127,13 @@ class Carro{
     */
     public $alarme;
 
+    /**
+    * Método responsável por cadastrar novos automóveis no banco
+    * @return boolean
+    */
+    public function Cadastrar(){
+        $obDatabase = new Database('carros');
 
+        //echo "<pre>"; print_r($obDatabase); echo "</pre>"; exit;
+    }
 }
