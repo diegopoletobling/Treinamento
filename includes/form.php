@@ -52,43 +52,46 @@
     <div class="container mt-4">
             <div class="form-check-inline">
                 <label class="form-check-label" for="check1">
-                <input type="checkbox" class="form-check-input" id="check1" name="aarCondicionado" value="s"> Ar Condionado
+                <input type="checkbox" class="form-check-input" id="check1" name="arCondicionado" value="<?php echo intval(1);?>"> Ar Condionado
                 </label>
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check2">
-                <input type="checkbox" class="form-check-input" id="check2" name="airBag" value="s"> Air Bag
+                <input type="checkbox" class="form-check-input" id="check2" name="airBag" value="<?php echo intval(1);?>"> Air Bag
                 </label>
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check3">
-                <input type="checkbox" class="form-check-input" id="check3" name="cdPlayer" value="s"> CD Player
+                <input type="checkbox" class="form-check-input" id="check3" name="cdPlayer" value="<?php echo intval(1);?>"> CD Player
                 </label>
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check4">
-                <input type="checkbox" class="form-check-input" id="check4" name="direcaoHidraulica" value="s"> Direção Hidráulica
+                <input type="checkbox" class="form-check-input" id="check4" name="direcaoHidraulica" value="<?php echo intval(1);?>"> Direção Hidráulica
                 </label>
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check5">
-                <input type="checkbox" class="form-check-input" id="check5" name="vidroEletrico" value="s"> Vidro Elétrico
+                <input type="checkbox" class="form-check-input" id="check5" name="vidroEletrico" value="<?php echo intval(1);?>"> Vidro Elétrico
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check6">
-                <input type="checkbox" class="form-check-input" id="check6" name="travaEletrica" value="s"> Trava Elétrica
+                <input type="checkbox" class="form-check-input" id="check6" name="travaEletrica" value="<?php echo intval(1);?>"> Trava Elétrica
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check7">
-                <input type="checkbox" class="form-check-input" id="check7" name="cambioAutomatico" value="s"> Câmbio Automático
+                <input type="checkbox" class="form-check-input" id="check7" name="cambioAutomatico" value="<?php echo intval(1);?>"> Câmbio Automático
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check8">
-                <input type="checkbox" class="form-check-input" id="check8" name="rodasLiga" value="s"> Rodas de liga
+                <input type="checkbox" class="form-check-input" id="check8" name="rodasLiga" value="<?php echo intval(1);?>"> Rodas de liga
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check9">
-                <input type="checkbox" class="form-check-input" id="check9" name="alarme" value="s"> Alarme
+                <input type="checkbox" class="form-check-input" id="check9" name="alarme" value="<?php echo intval(1);?>"> Alarme
+               
+
+
             </div>
     </div>
 

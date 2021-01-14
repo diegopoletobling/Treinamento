@@ -93,11 +93,11 @@ class Database{
 
         //Monta a query
         $query = 'INSERT INTO '.$this->table.' ('.implode(',',$fields).') VALUES ('.implode(',', $binds).')';
-
+        //var_dump($values) ;
         //Executa o insert
         $this->execute($query, array_values($values));
-
-        //
+        
+        //Retorna o ID inserido
         return $this->connection->lastInsertId();
     }
 }

@@ -133,7 +133,7 @@ class Carro
     */
     public function Cadastrar(){
         $obDatabase = new Database('carros');
-        $obDatabase->insert([
+        $this->id = $obDatabase->insert([
                                 'descricao'         => $this->descricao,
                                 'placa'             => $this->placa,
                                 'codigoRenavam'     => $this->codigoRenavam,
@@ -144,16 +144,17 @@ class Carro
                                 'marca'             => $this->marca,
                                 'preco'             => $this->preco,
                                 'precoFipe'         => $this->precoFipe,
-                                'arCondicionado'    => $this->arCondicionado,
-                                'airBag'            => $this->airBag,
-                                'cdPlayer'          => $this->cdPlayer,
-                                'direcaoHidraulica' => $this->direcaoHidraulica,
-                                'vidroEletrico'     => $this->vidroEletrico,
-                                'travaEletrica'     => $this->travaEletrica,
-                                'cambioAutomatico'  => $this->cambioAutomatico,
-                                'rodasLiga'         => $this->rodasLiga,
-                                'alarme'            => $this->alarme
+                                'arCondicionado'    => intval($this->arCondicionado),
+                                'airBag'            => intval($this->airBag),
+                                'cdPlayer'          => intval($this->cdPlayer),
+                                'direcaoHidraulica' => intval($this->direcaoHidraulica),
+                                'vidroEletrico'     => intval($this->vidroEletrico),
+                                'travaEletrica'     => intval($this->travaEletrica),
+                                'cambioAutomatico'  => intval($this->cambioAutomatico),
+                                'rodasLiga'         => intval($this->rodasLiga),
+                                'alarme'            => intval($this->alarme)
                             ]);
-        //echo "<pre>"; print_r($obDatabase); echo "</pre>"; exit;
+        echo "<pre>"; print_r($this); echo "</pre>"; exit;
+        return true;
     }
 }

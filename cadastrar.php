@@ -32,6 +32,8 @@ if(isset($_POST['descricao']))
     $obcarro->rodasLiga         = addslashes($_POST['rodasLiga']);
 
     $obcarro->Cadastrar();
+    header('location: index.php?status=success');
+    exit;
 }
 
 include __DIR__.'/includes/header.php';
