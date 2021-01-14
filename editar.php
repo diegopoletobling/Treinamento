@@ -1,17 +1,28 @@
 <?php
 
 require __DIR__.'/vendor/autoload.php';
-define('TITLE', 'Cadastrar carro');
+define('TITLE', 'Editar carro');
 
 use classes\Entity\Carro;
 
+if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
+    header('location: index.php?status=error');
+    exit;
+}
 
-//echo "<pre>"; print_r($_POST); echo "</pre>"; exit;
+//Consulta carro
+$obcarro = Carro::getCarro($_GET['id']);
 
+//Validação do carro
+if(!$obcarro instanceof Carro){
+    header('location: index.php?status=erro');
+    exit;
+}
+
+//Validação do POST
 if(isset($_POST['descricao']))
 {
 
-    $obcarro = new Carro;
     $obcarro->descricao         = addslashes($_POST['descricao']);
     $obcarro->placa             = addslashes($_POST['placa']);
     $obcarro->codigoRenavam     = addslashes($_POST['codigoRenavam']);
@@ -31,8 +42,9 @@ if(isset($_POST['descricao']))
     $obcarro->cambioAutomatico  = addslashes($_POST['cambioAutomatico']);
     $obcarro->alarme            = addslashes($_POST['alarme']);
     $obcarro->rodasLiga         = addslashes($_POST['rodasLiga']);
+    
+    $obcarro->atualizar();
 
-    $obcarro->Cadastrar();
     header('location: index.php?status=success');
     exit;
 }

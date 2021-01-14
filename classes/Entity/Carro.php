@@ -3,6 +3,7 @@
 namespace classes\Entity;
 
 use classes\Db\Database;
+use \PDO;
 
 class Carro
 {
@@ -154,7 +155,60 @@ class Carro
                                 'rodasLiga'         => intval($this->rodasLiga),
                                 'alarme'            => intval($this->alarme)
                             ]);
-        echo "<pre>"; print_r($this); echo "</pre>"; exit;
+       // echo "<pre>"; print_r($this); echo "</pre>"; exit;
         return true;
+    }
+    /**
+     * Metodo responsável por atualizar o carro no banco
+     *
+     * @return boolean
+     */
+    public function atualizar(){
+        return (new Database('carros'))->update('id = '.$this->id,[
+                                                    'descricao'         => $this->descricao,
+                                                    'placa'             => $this->placa,
+                                                    'codigoRenavam'     => $this->codigoRenavam,
+                                                    'anoModelo'         => $this->anoModelo,
+                                                    'anoFabricacao'     => $this->anoFrabricacao,
+                                                    'cor'               => $this->cor,
+                                                    'km'                => $this->km,
+                                                    'marca'             => $this->marca,
+                                                    'preco'             => $this->preco,
+                                                    'precoFipe'         => $this->precoFipe,
+                                                    'arCondicionado'    => intval($this->arCondicionado),
+                                                    'airBag'            => intval($this->airBag),
+                                                    'cdPlayer'          => intval($this->cdPlayer),
+                                                    'direcaoHidraulica' => intval($this->direcaoHidraulica),
+                                                    'vidroEletrico'     => intval($this->vidroEletrico),
+                                                    'travaEletrica'     => intval($this->travaEletrica),
+                                                    'cambioAutomatico'  => intval($this->cambioAutomatico),
+                                                    'rodasLiga'         => intval($this->rodasLiga),
+                                                    'alarme'            => intval($this->alarme)
+                                                ]);
+    }
+
+    /**
+     * Método responsável por obter os vaículos do banco de dados
+     *
+     * @param string $where
+     * @param string $order
+     * @param string $limit
+     * @return array
+     */
+    public static function getCarros($where = null, $order = null, $limit = null){
+        return (new Database('carros'))->select($where, $order, $limit)
+                                       ->fetchAll(PDO::FETCH_CLASS,self::class);
+
+    }
+
+    /**
+     * Método responsável por buscar o veículo pelo ID
+     *
+     * @param integer $id
+     * @return Carro
+     */
+    public static function getCarro($id){
+        return (new Database('carros'))->select('id = '.$id)
+                                      ->fetchObject(self::class);
     }
 }

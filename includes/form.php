@@ -1,50 +1,50 @@
 <main>
-    <h2 class="mt-3">Dados cadastrais</h2>
+    <h2 class="mt-3"><?=TITLE?></h2>
     <form method="POST" action="cadastrar.php">
         <div class="row">
             <div class="col-md-8">
                 <label for="inputemail">Descrição</label>
-                <textarea class="form-control" name="descricao"></textarea>
+                <textarea class="form-control" name="descricao" value="<?=$obcarro->descricao?>"><?=$obcarro->descricao?></textarea>
             </div>
             <div class="col-md-2">
                 <label for="inputplaca">Placa</label>
-                <input type="text" class="form-control" name="placa" id="inputplaca" minlength="7" maxlength="7" placeholder="Placa: ">
+                <input type="text" class="form-control" name="placa" id="inputplaca" value="<?=$obcarro->placa?>"> minlength="7" maxlength="7" placeholder="Placa: ">
             </div>
             <div class="col-md-2">
                 <label for="inputcodigo">Código RENAVAM</label>
-                <input type="text" class="form-control" name="codigoRenavam" id="inpucodigo" maxlength="11" placeholder="Código RENAVAM: ">
+                <input type="text" class="form-control" name="codigoRenavam" id="inpucodigo" value="<?=$obcarro->codigoRenavam?>" maxlength="11" placeholder="Código RENAVAM: ">
             </div>
         </div>
         <div class="row mt-4">
             <div class="col-md-2">
                 <label for="inputanoModelo">Ano modelo</label>
-                <input type="number" class="form-control" min="1900" name="anoModelo" id="inputanoModelo" minlength="4" maxlength="4" placeholder="Ano: ">
+                <input type="number" class="form-control" min="1900" name="anoModelo" id="inputanoModelo" value="<?=$obcarro->anoModelo?>" minlength="4" maxlength="4" placeholder="Ano: ">
             </div>
             <div class="col-md-2">
                 <label for="inputanoFabricacao">Ano fabricação</label>
-                <input type="number" class="form-control" min="1900" name="anoFabricacao" id="inputanoFabricacao" minlength="4" maxlength="4" placeholder="Ano: ">
+                <input type="number" class="form-control" min="1900" name="anoFabricacao" id="inputanoFabricacao" value="<?=$obcarro->anoFrabricacao?>" minlength="4" maxlength="4" placeholder="Ano: ">
             </div>
             <div class="col-md-2">
                 <label for="inputcor">Cor</label>
-                <input type="text" class="form-control" name="cor" id="inputcor" maxlength="20" placeholder="Cor: ">
+                <input type="text" class="form-control" name="cor" id="inputcor" value="<?=$obcarro->cor?>" maxlength="20" placeholder="Cor: ">
             </div>
             <div class="col-md-2">
                 <label for="inputkm">KM</label>
-                <input type="number" class="form-control" name="km" id="inputkm" maxlength="6" placeholder="Kilometragem: ">
+                <input type="number" class="form-control" name="km" id="inputkm" value="<?=$obcarro->km?>" maxlength="6" placeholder="Kilometragem: ">
             </div>
             <div class="col-md-2">
                 <label for="inputmarca">Marca</label>
-                <input type="text" class="form-control" name="marca" id="inputmarca" maxlength="20" placeholder="Cor: ">
+                <input type="text" class="form-control" name="marca" id="inputmarca" value="<?=$obcarro->marca?>" maxlength="20" placeholder="Cor: ">
             </div>
         </div>
         <div class="row mt-4">
             <div class="col-md-2">
                 <label for="inputpreco">Preço</label>
-                <input type="number" class="form-control" name="preco" id="inputpreco" min="0.00" step="0.01" maxlength="8" placeholder="Preço: ">
+                <input type="number" class="form-control" name="preco" id="inputpreco" value="<?=$obcarro->preco?>" min="0.00" step="0.01" maxlength="8" placeholder="Preço: ">
             </div>
             <div class="col-md-2">
                 <label for="inputcodigo">Preço FIPE</label>
-                <input type="number" class="form-control" name="precoFipe" id="inputprecoFIPE" min="0.00" step="0.01" maxlength="8" placeholder="Preço FIPE: ">
+                <input type="number" class="form-control" name="precoFipe" id="inputprecoFIPE" value="<?=$obcarro->precoFipe?>" min="0.00" step="0.01" maxlength="8" placeholder="Preço FIPE: ">
             </div>
         </div>
 
@@ -62,7 +62,7 @@
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check3">
-                <input type="checkbox" class="form-check-input" id="check3" name="cdPlayer" value="<?php echo intval(1);?>"> CD Player
+                <input type="checkbox" class="form-check-input" id="check3" name="cdPlayer" value="<?php echo intval(1); $obcarro->cdPlayer == '1' ?  : '1'?>"> CD Player
                 </label>
             </div>
             <div class="form-check-inline">
@@ -89,9 +89,6 @@
             <div class="form-check-inline">
                 <label class="form-check-label" for="check9">
                 <input type="checkbox" class="form-check-input" id="check9" name="alarme" value="<?php echo intval(1);?>"> Alarme
-               
-
-
             </div>
     </div>
 
