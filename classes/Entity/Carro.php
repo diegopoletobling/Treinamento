@@ -133,7 +133,27 @@ class Carro
     */
     public function Cadastrar(){
         $obDatabase = new Database('carros');
-
+        $obDatabase->insert([
+                                'descricao'         => $this->descricao,
+                                'placa'             => $this->placa,
+                                'codigoRenavam'     => $this->codigoRenavam,
+                                'anoModelo'         => $this->anoModelo,
+                                'anoFabricacao'     => $this->anoFrabricacao,
+                                'cor'               => $this->cor,
+                                'km'                => $this->km,
+                                'marca'             => $this->marca,
+                                'preco'             => $this->preco,
+                                'precoFipe'         => $this->precoFipe,
+                                'arCondicionado'    => $this->arCondicionado,
+                                'airBag'            => $this->airBag,
+                                'cdPlayer'          => $this->cdPlayer,
+                                'direcaoHidraulica' => $this->direcaoHidraulica,
+                                'vidroEletrico'     => $this->vidroEletrico,
+                                'travaEletrica'     => $this->travaEletrica,
+                                'cambioAutomatico'  => $this->cambioAutomatico,
+                                'rodasLiga'         => $this->rodasLiga,
+                                'alarme'            => $this->alarme
+                            ]);
         //echo "<pre>"; print_r($obDatabase); echo "</pre>"; exit;
     }
 }
