@@ -96,7 +96,7 @@ class Database{
         //var_dump($values) ;
         //Executa o insert
         $this->execute($query, array_values($values));
-        
+
         //Retorna o ID inserido
         return $this->connection->lastInsertId();
     }
@@ -139,6 +139,14 @@ class Database{
         $this->execute($query,array_values($values));
 
         //RETORNA SUCESSO
+        return true;
+    }
+
+    public function delete($where){
+        $query = 'DELETE FROM '.$this->table.' WHERE '.$where;
+
+        $this->execute($query);
+
         return true;
     }
 }

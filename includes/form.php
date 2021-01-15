@@ -8,7 +8,7 @@
             </div>
             <div class="col-md-2">
                 <label for="inputplaca">Placa</label>
-                <input type="text" class="form-control" name="placa" id="inputplaca" value="<?=$obcarro->placa?>"> minlength="7" maxlength="7" placeholder="Placa: ">
+                <input type="text" class="form-control" name="placa" id="inputplaca" value="<?=$obcarro->placa?>" minlength="7" maxlength="7" placeholder="Placa: ">
             </div>
             <div class="col-md-2">
                 <label for="inputcodigo">Código RENAVAM</label>
@@ -22,7 +22,7 @@
             </div>
             <div class="col-md-2">
                 <label for="inputanoFabricacao">Ano fabricação</label>
-                <input type="number" class="form-control" min="1900" name="anoFabricacao" id="inputanoFabricacao" value="<?=$obcarro->anoFrabricacao?>" minlength="4" maxlength="4" placeholder="Ano: ">
+                <input type="number" class="form-control" min="1900" name="anoFabricacao" id="inputanoFabricacao" value="<?=$obcarro->anoFabricacao?>" minlength="4" maxlength="4" placeholder="Ano: ">
             </div>
             <div class="col-md-2">
                 <label for="inputcor">Cor</label>

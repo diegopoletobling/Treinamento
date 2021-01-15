@@ -1,5 +1,18 @@
 <?php
 
+    $mesage = '';
+    if(isset($_GET['status'])){
+        switch ($_GET['status']) {
+          case 'success':
+            $mesage = '<div class="alert alert-success">Ação executada com sucesso!</div>';
+            break;
+
+          case 'error':
+            $mesage = '<div class="alert alert-danger">Ação não executada!</div>';
+            break;
+        }
+    }
+
     $result = '';
     foreach($carros as $carro){
         $result .= '<tr>
@@ -12,7 +25,7 @@
                             <a href="editar.php?id='.$carro->id.'">
                                 <button type="button" class="btn btn-primary">Editar</button>
                             </a>
-                            <a href="editar.php?id='.$carro->id.'">
+                            <a href="excluir.php?id='.$carro->id.'">
                                 <button type="button" class="btn btn-danger">Excluir</button>
                             </a>
                         </td>
@@ -27,6 +40,7 @@
 ?>
 
 <main>
+    <?=$mesage?>
     <section>
         <a href="cadastrar.php">
             <button class="btn btn-success mt-2">Novo Carro</button>

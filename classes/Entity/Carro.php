@@ -42,7 +42,7 @@ class Carro
     * ano de fabricação do veículo
     * @var int
     */
-    public $anoFrabricacao;
+    public $anoFabricacao;
 
     /**
     * Cor do veículo
@@ -139,7 +139,7 @@ class Carro
                                 'placa'             => $this->placa,
                                 'codigoRenavam'     => $this->codigoRenavam,
                                 'anoModelo'         => $this->anoModelo,
-                                'anoFabricacao'     => $this->anoFrabricacao,
+                                'anoFabricacao'     => $this->anoFabricacao,
                                 'cor'               => $this->cor,
                                 'km'                => $this->km,
                                 'marca'             => $this->marca,
@@ -158,6 +158,7 @@ class Carro
        // echo "<pre>"; print_r($this); echo "</pre>"; exit;
         return true;
     }
+
     /**
      * Metodo responsável por atualizar o carro no banco
      *
@@ -169,13 +170,13 @@ class Carro
                                                     'placa'             => $this->placa,
                                                     'codigoRenavam'     => $this->codigoRenavam,
                                                     'anoModelo'         => $this->anoModelo,
-                                                    'anoFabricacao'     => $this->anoFrabricacao,
+                                                    'anoFabricacao'     => $this->anoFabricacao,
                                                     'cor'               => $this->cor,
                                                     'km'                => $this->km,
                                                     'marca'             => $this->marca,
                                                     'preco'             => $this->preco,
                                                     'precoFipe'         => $this->precoFipe,
-                                                    'arCondicionado'    => intval($this->arCondicionado),
+                                                    /*'arCondicionado'    => intval($this->arCondicionado),
                                                     'airBag'            => intval($this->airBag),
                                                     'cdPlayer'          => intval($this->cdPlayer),
                                                     'direcaoHidraulica' => intval($this->direcaoHidraulica),
@@ -183,10 +184,13 @@ class Carro
                                                     'travaEletrica'     => intval($this->travaEletrica),
                                                     'cambioAutomatico'  => intval($this->cambioAutomatico),
                                                     'rodasLiga'         => intval($this->rodasLiga),
-                                                    'alarme'            => intval($this->alarme)
+                                                    'alarme'            => intval($this->alarme)*/
                                                 ]);
     }
 
+    public function excluir(){
+        return (new Database('carros'))->delete('id = '.$this->id);
+    }
     /**
      * Método responsável por obter os vaículos do banco de dados
      *
