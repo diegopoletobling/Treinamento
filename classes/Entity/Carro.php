@@ -165,6 +165,8 @@ class Carro
      * @return boolean
      */
     public function atualizar(){
+
+        //echo "<pre>"; print_r($this->id); echo "</pre>"; exit;
         return (new Database('carros'))->update('id = '.$this->id,[
                                                     'descricao'         => $this->descricao,
                                                     'placa'             => $this->placa,
@@ -185,6 +187,7 @@ class Carro
                                                     'cambioAutomatico'  => intval($this->cambioAutomatico),
                                                     'rodasLiga'         => intval($this->rodasLiga),
                                                     'alarme'            => intval($this->alarme)*/
+
                                                 ]);
     }
 

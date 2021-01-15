@@ -1,6 +1,6 @@
 <main>
     <h2 class="mt-3"><?=TITLE?></h2>
-    <form method="POST" action="cadastrar.php">
+    <form method="POST" action="editar.php">
         <div class="row">
             <div class="col-md-8">
                 <label for="inputemail">Descrição</label>
@@ -62,7 +62,7 @@
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="check3">
-                <input type="checkbox" class="form-check-input" id="check3" name="cdPlayer" value="<?php echo intval(1); $obcarro->cdPlayer == '1' ?  : '1'?>"> CD Player
+                <input type="checkbox" class="form-check-input" id="check3" name="cdPlayer" value="<?php echo intval(1); ?>"> CD Player
                 </label>
             </div>
             <div class="form-check-inline">
@@ -96,9 +96,12 @@
         <a href="index.php">
             <button class="btn btn-success mt-4">Voltar</button>
         </a>
-        <div class="">
-            <button type="submit" class="btn btn-success mt-4">Salvar</button>
-        </div>
+        <?php if ($update == true): ?>
+	            <button class="btn btn-success mt-4" type="submit" name="update" >Atualizar</button>
+            <?php else: ?>
+                <button type="submit" class="btn btn-success mt-4">Salvar</button>
+        <?php endif ?>
+        
     </section>
     </form>
 </main>

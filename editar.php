@@ -9,12 +9,14 @@ if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
     header('location: index.php?status=error');
     exit;
 }
+
+$update = true;
 //echo "<pre>"; print_r($_GET); echo "</pre>"; exit;
 
 //Consulta carro
 $obcarro = Carro::getCarro($_GET['id']);
 //echo "<pre>"; print_r($obcarro); echo "</pre>"; exit;
-
+//echo "<pre>"; print_r($_GET); echo "</pre>"; exit;
 //Validação do carro
 if(!$obcarro instanceof Carro){
     header('location: index.php?status=erro');
@@ -22,9 +24,8 @@ if(!$obcarro instanceof Carro){
 }
 
 //Validação do POST
-if(isset($_POST['descricao']))
+if(isset($_POST['update']))
 {
-
     $obcarro->descricao         = addslashes($_POST['descricao']);
     $obcarro->placa             = addslashes($_POST['placa']);
     $obcarro->codigoRenavam     = addslashes($_POST['codigoRenavam']);
@@ -45,7 +46,7 @@ if(isset($_POST['descricao']))
     $obcarro->rodasLiga         = addslashes($_POST['rodasLiga']);
     $obcarro->alarme            = addslashes($_POST['alarme']);
     */
-    //echo "<pre>"; print_r($obcarro); echo "</pre>"; exit;
+
     $obcarro->atualizar();
 
     header('location: index.php?status=success');

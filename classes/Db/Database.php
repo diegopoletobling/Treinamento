@@ -129,6 +129,7 @@ class Database{
     * @return boolean
     */
     public function update($where,$values){
+        //echo "<pre>"; print_r($where); echo "</pre>"; exit;
         //DADOS DA QUERY
         $fields = array_keys($values);
 
