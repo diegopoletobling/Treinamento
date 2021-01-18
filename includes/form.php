@@ -1,6 +1,6 @@
 <main>
     <h2 class="mt-3"><?=TITLE?></h2>
-    <form method="POST" action="<?=$formaction?>">
+    <form method="POST" action="cadastrar.php">
         <div class="row">
             <div class="col-md-8">
                 <label for="inputemail">Descrição</label>

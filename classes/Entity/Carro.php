@@ -209,6 +209,19 @@ class Carro
     }
 
     /**
+     * Método responsável por obter a quantidade de carros do Banco de dados
+     *
+     * @param string $where
+     * @return integer
+     */
+    public static function getQuantidadeCarros($where = null){
+        return (new Database('carros'))->select($where,null,null,'COUNT(*) as qtd')
+                                       ->fetchObject()
+                                       ->qtd;
+
+    }
+
+    /**
      * Método responsável por buscar o veículo pelo ID
      *
      * @param integer $id
