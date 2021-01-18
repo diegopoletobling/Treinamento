@@ -1,6 +1,6 @@
 <main>
     <h2 class="mt-3"><?=TITLE?></h2>
-    <form method="POST" action="editar.php">
+    <form method="POST" action="<?=$formaction?>">
         <div class="row">
             <div class="col-md-8">
                 <label for="inputemail">Descrição</label>
@@ -96,12 +96,9 @@
         <a href="index.php">
             <button class="btn btn-success mt-4">Voltar</button>
         </a>
-        <?php if ($update == true): ?>
-	            <button class="btn btn-success mt-4" type="submit" name="update" >Atualizar</button>
-            <?php else: ?>
+            <div class="">
                 <button type="submit" class="btn btn-success mt-4">Salvar</button>
-        <?php endif ?>
-        
+            </div>
     </section>
     </form>
 </main>

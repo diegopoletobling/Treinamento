@@ -48,6 +48,34 @@
     </section>
 
     <section>
+        <form method="get">
+            <div class="row my-4">
+                <div class="col">
+                    <label>Buscar por nome</label>
+                    <input type="text" name="busca" class="form-control" value="<?=$busca?>">
+                </div>
+                <div class="col">
+                    <label>Opcionais</label>
+                    <select name="opcionais" class="form-control">
+                        <option value="<?php echo intval(1);?>">Ar Condicionado</option>
+                        <option value="<?php echo intval(1);?>">Air Bag</option>
+                        <option value="<?php echo intval(1);?>">CD Player</option>
+                        <option value="<?php echo intval(1);?>">Direção Hidráulica</option>
+                        <option value="<?php echo intval(1);?>">Vidro Elétrico</option>
+                        <option value="<?php echo intval(1);?>">Trava Elétrica</option>
+                        <option value="<?php echo intval(1);?>">Câmbio Automático</option>
+                        <option value="<?php echo intval(1);?>">Rodas de Liga Leve</option>
+                        <option value="<?php echo intval(1);?>">Alarme</option>
+                    </select>
+                </div>
+                <div class="col d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary">Filtar</button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section>
         <table class="table bg-light mt-3">
             <thead>
                 <tr>

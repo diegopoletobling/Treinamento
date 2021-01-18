@@ -6,8 +6,11 @@ define('TITLE', 'Cadastrar carro');
 use classes\Entity\Carro;
 $obcarro = new Carro;
 //echo "<pre>"; print_r($obcarro); echo "</pre>"; exit;
+
+$formaction = 'cadastrar.php';
 if(isset($_POST['descricao']))
 {
+
     $update = false;
     $obcarro->descricao         = addslashes($_POST['descricao']);
     $obcarro->placa             = addslashes($_POST['placa']);
@@ -28,7 +31,7 @@ if(isset($_POST['descricao']))
     $obcarro->cambioAutomatico  = addslashes($_POST['cambioAutomatico']);
     $obcarro->rodasLiga         = addslashes($_POST['rodasLiga']);
     $obcarro->alarme            = addslashes($_POST['alarme']);
-
+    //echo "<pre>"; print_r($obcarro); echo "</pre>"; exit;
     $obcarro->Cadastrar();
     header('location: index.php?status=success');
     exit;
