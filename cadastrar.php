@@ -7,9 +7,11 @@ use classes\Entity\Carro;
 $obcarro = new Carro;
 //echo "<pre>"; print_r($obcarro); echo "</pre>"; exit;
 
-$formaction = 'cadastrar.php';
-if(isset($_POST['descricao']))
-{
+//$formaction = 'cadastrar.php';
+if(isset($_POST['descricao'])){
+    if (empty($_POST['descricao'])) {
+        header("Location: index.php"); exit;
+    }
 
     $update = false;
     $obcarro->descricao         = addslashes($_POST['descricao']);

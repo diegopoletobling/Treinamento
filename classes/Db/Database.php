@@ -86,6 +86,7 @@ class Database{
     * @return integer ID inserido
     */
     public function insert($values){
+        //var_dump($values) ;
         //dados query
         $fields = array_keys($values);
         $binds = array_pad([], count($fields), '?');

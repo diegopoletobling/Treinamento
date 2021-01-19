@@ -9,7 +9,7 @@ if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
     header('location: index.php?status=error');
     exit;
 }
-$formaction = 'editar.php';
+//$formaction = 'editar.php';
 $update = true;
 //echo "<pre>"; print_r($_GET); echo "</pre>"; exit;
 
@@ -37,7 +37,7 @@ if(isset($_POST['descricao']))
     $obcarro->marca             = addslashes($_POST['marca']);
     $obcarro->preco             = addslashes($_POST['preco']);
     $obcarro->precoFipe         = addslashes($_POST['precoFipe']);
-    /*$obcarro->arCondicionado    = addslashes($_POST['arCondicionado']);
+    /*$obcarro->arCondicionado  = addslashes($_POST['arCondicionado']);
     $obcarro->airBag            = addslashes($_POST['airBag']);
     $obcarro->cdPlayer          = addslashes($_POST['cdPlayer']);
     $obcarro->direcaoHidraulica = addslashes($_POST['direcaoHidraulica']);
