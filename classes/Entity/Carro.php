@@ -3,6 +3,7 @@
 namespace classes\Entity;
 
 use classes\Db\Database;
+use Exception;
 use \PDO;
 
 class Carro

@@ -1,50 +1,53 @@
 <main>
     <h2 class="mt-3"><?=TITLE?></h2>
+    <a href="index.php">
+            <button class="btn btn-success mt-4">Voltar</button>
+    </a>
     <form method="POST" action="cadastrar.php" id="form1">
-        <div class="row">
+        <div class="row mt-4">
             <div class="col-md-8">
                 <label for="inputemail">Descrição</label>
-                <textarea class="form-control" name="descricao" id="descricao" value="<?=$obcarro->descricao?>"><?=$obcarro->descricao?></textarea>
+                <textarea class="form-control" name="descricao" id="descricao" value="<?=$obcarro->descricao?>" required><?=$obcarro->descricao?></textarea>
             </div>
             <div class="col-md-2">
                 <label for="inputplaca">Placa</label>
-                <input type="text" class="form-control" name="placa" id="placa" value="<?=$obcarro->placa?>" minlength="7" maxlength="7" placeholder="Placa: ">
+                <input type="text" class="form-control" name="placa" id="placa" value="<?=$obcarro->placa?>" minlength="7" maxlength="7" placeholder="Placa: " required>
             </div>
             <div class="col-md-2">
                 <label for="inputcodigo">Código RENAVAM</label>
-                <input type="text" class="form-control" name="codigoRenavam" id="codigoRenavam" value="<?=$obcarro->codigoRenavam?>" maxlength="11" placeholder="Código RENAVAM: ">
+                <input type="text" class="form-control" name="codigoRenavam" id="codigoRenavam" value="<?=$obcarro->codigoRenavam?>" maxlength="11" placeholder="Código RENAVAM: " required>
             </div>
         </div>
         <div class="row mt-4">
             <div class="col-md-2">
                 <label for="inputanoModelo">Ano modelo</label>
-                <input type="number" class="form-control" min="1900" name="anoModelo" id="anoModelo" value="<?=$obcarro->anoModelo?>" minlength="4" maxlength="4" placeholder="Ano: ">
+                <input type="number" class="form-control" min="1900" name="anoModelo" id="anoModelo" value="<?=$obcarro->anoModelo?>" minlength="4" maxlength="4" placeholder="Ano: " required>
             </div>
             <div class="col-md-2">
                 <label for="inputanoFabricacao">Ano fabricação</label>
-                <input type="number" class="form-control" min="1900" name="anoFabricacao" id="anoFabricacao" value="<?=$obcarro->anoFabricacao?>" minlength="4" maxlength="4" placeholder="Ano: ">
+                <input type="number" class="form-control" min="1900" name="anoFabricacao" id="anoFabricacao" value="<?=$obcarro->anoFabricacao?>" minlength="4" maxlength="4" placeholder="Ano: " required>
             </div>
             <div class="col-md-2">
                 <label for="inputcor">Cor</label>
-                <input type="text" class="form-control" name="cor" id="cor" value="<?=$obcarro->cor?>" maxlength="20" placeholder="Cor: ">
+                <input type="text" class="form-control" name="cor" id="cor" value="<?=$obcarro->cor?>" maxlength="20" placeholder="Cor: " required>
             </div>
             <div class="col-md-2">
                 <label for="inputkm">KM</label>
-                <input type="number" class="form-control" name="km" id="km" value="<?=$obcarro->km?>" maxlength="6" placeholder="Kilometragem: ">
+                <input type="number" class="form-control" name="km" id="km" value="<?=$obcarro->km?>" maxlength="6" placeholder="Kilometragem: " required>
             </div>
             <div class="col-md-2">
                 <label for="inputmarca">Marca</label>
-                <input type="text" class="form-control" name="marca" id="marca" value="<?=$obcarro->marca?>" maxlength="20" placeholder="Cor: ">
+                <input type="text" class="form-control" name="marca" id="marca" value="<?=$obcarro->marca?>" maxlength="20" placeholder="Cor: " required>
             </div>
         </div>
         <div class="row mt-4">
             <div class="col-md-2">
                 <label for="inputpreco">Preço</label>
-                <input type="number" class="form-control" name="preco" id="preco" value="<?=$obcarro->preco?>" min="0.00" step="0.01" maxlength="8" placeholder="Preço: ">
+                <input type="number" class="form-control" name="preco" id="preco" value="<?=$obcarro->preco?>" min="0.00" step="0.01" maxlength="8" placeholder="Preço: " required>
             </div>
             <div class="col-md-2">
                 <label for="inputcodigo">Preço FIPE</label>
-                <input type="number" class="form-control" name="precoFipe" id="precoFipe" value="<?=$obcarro->precoFipe?>" min="0.00" step="0.01" maxlength="8" placeholder="Preço FIPE: ">
+                <input type="number" class="form-control" name="precoFipe" id="precoFipe" value="<?=$obcarro->precoFipe?>" min="0.00" step="0.01" maxlength="8" placeholder="Preço FIPE: " required>
             </div>
         </div>
 
@@ -93,14 +96,12 @@
     </div>
 
     <section>
-        <a href="index.php">
-            <button class="btn btn-success mt-4">Voltar</button>
-        </a>
-            <div class="">
-                <button type="submit" id="salvar" class="btn btn-success mt-4">Salvar</button>
-            </div>
+        
+        <?php if ($update == true): ?>
+	            <button class="btn btn-success mt-4" type="submit" name="update" >Atualizar</button>
+            <?php else: ?>
+                <button type="submit" class="btn btn-success mt-4">Salvar</button>
+        <?php endif ?>
     </section>
     </form>
-
-    
 </main>
