@@ -24,13 +24,10 @@ $('document').on("click","#salvar",function(e){
                 cambioAutomatico : $("#cambioAutomatico").val(),
                 rodasLiga        : $("#rodasLiga").val(),
                 alarme           : $("#alarme").val(),
-        },
-        beforeSend: function(){
-
         }
     });
 });
-
+/*
 $('document').on("click","#atualizar",function(e){
     e.preventDefault();
     $.ajax({
@@ -63,4 +60,4 @@ $('document').on("click","#atualizar",function(e){
 
 function validaDados(data){
     var data = document.getElementById
-}
+}*/

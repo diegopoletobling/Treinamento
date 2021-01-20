@@ -2,9 +2,9 @@
     <h2 class="mt-3"><?=TITLE?></h2>
     <a href="index.php">
             <button class="btn btn-success mt-4">Voltar</button>
-    </a>
-    <form method="POST" action="cadastrar.php" id="form1">
-        <div class="row mt-4">
+        </a>
+    <form method="POST" action="cadastrar.php" nome="meuform" id="form1" onsubmit="return validar()">
+        <div class="row">
             <div class="col-md-8">
                 <label for="inputemail">Descrição</label>
                 <textarea class="form-control" name="descricao" id="descricao" value="<?=$obcarro->descricao?>" required><?=$obcarro->descricao?></textarea>
@@ -96,12 +96,29 @@
     </div>
 
     <section>
-        
-        <?php if ($update == true): ?>
-	            <button class="btn btn-success mt-4" type="submit" name="update" >Atualizar</button>
-            <?php else: ?>
-                <button type="submit" class="btn btn-success mt-4">Salvar</button>
-        <?php endif ?>
+            <div class="">
+                <button type="submit" id="salvar" class="btn btn-success mt-4">Salvar</button>
+            </div>
     </section>
     </form>
+    <div><small style="color: red;" id="erro"></small></div>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        function validar(){
+            let descricao = document.forms['meuform']['descricao'].value;
+
+            let msg_erro = '';
+            let go = true;
+
+            if(descricao == ''){
+                msg_erro = 'O campo descrição precisa ser preenchido!';
+                avancar = false;
+            }
+            if(avancar == false){
+                document.getElementById('erro').innerHTML = msg_erro;
+            }
+            return avancar;
+        }
+    
+    </script>
 </main>
