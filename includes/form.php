@@ -91,7 +91,7 @@
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="alarme">
-                <input type="checkbox" class="form-check-input" id="alarme" name="alarme" value="<?php echo intval(1);?>"> Alarme
+                <input type="checkbox" class="form-check-input" id="alarme" name="alarme" "> Alarme
             </div>
     </div>
 
@@ -103,22 +103,5 @@
     </form>
     <div><small style="color: red;" id="erro"></small></div>
     <script src="js/jquery-3.5.1.min.js"></script>
-    <script>
-        function validar(){
-            let descricao = document.forms['meuform']['descricao'].value;
 
-            let msg_erro = '';
-            let go = true;
-
-            if(descricao == ''){
-                msg_erro = 'O campo descrição precisa ser preenchido!';
-                avancar = false;
-            }
-            if(avancar == false){
-                document.getElementById('erro').innerHTML = msg_erro;
-            }
-            return avancar;
-        }
-    
-    </script>
 </main>

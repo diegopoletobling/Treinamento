@@ -17,28 +17,28 @@ if(isset($_POST['descricao']) || isset($_POST['placa']) || isset($_POST['codigoR
 
         $update                     = false;
         $obcarro->descricao         = addslashes($_POST['descricao']);
-        if($this.$obcarro->descricao == ""){
+        if($obcarro->descricao == ""){
             echo "Preencha o campo descrição!";
         }
         $obcarro->placa             = addslashes($_POST['placa']);
-        if(strlen($this.$obcarro->placa) != 8 || !preg_match("^[a-zA-Z]{3}[0-9][A-Za-z0-9][0-9]{2}$", $this.$obcarro->placa)){
+        if(strlen($obcarro->placa) != 8 || !preg_match("^[a-zA-Z]{3}[0-9][A-Za-z0-9][0-9]{2}$", $obcarro->placa)){
             echo "Preencha o campo placa corretamente!";
         }
         $obcarro->codigoRenavam     = addslashes($_POST['codigoRenavam']);
-        if(strlen($this.$obcarro->codigoRenavam) != 11 || !is_numeric($this.$obcarro->codigoRenavam)){
+        if(strlen($obcarro->codigoRenavam) != 11 || !is_numeric($obcarro->codigoRenavam)){
             echo "Preencha o campo codigoRenavam corretamente!";
         }
         $obcarro->anoModelo         = addslashes($_POST['anoModelo']);
-        if(strlen($this.$obcarro->anoModelo) != 4){
+        if(strlen($obcarro->anoModelo) != 4){
             echo "Preencha o campo anoModelo corretamente!";
         }
         $obcarro->anoFabricacao     = addslashes($_POST['anoFabricacao']);
-        if(strlen($this.$obcarro->anoFabricacao) != 4){
+        if(strlen($obcarro->anoFabricacao) != 4){
             echo "Preencha o campo anoFabricacao corretamente!";
         }
         $obcarro->cor               = addslashes($_POST['cor']);
         $obcarro->km                = addslashes($_POST['km']);
-        if(!is_numeric($this.$obcarro->km)){
+        if(!is_numeric($obcarro->km)){
             echo "Preencha o campo codigoRenavam corretamente!";
         }
         $obcarro->marca             = addslashes($_POST['marca']);
