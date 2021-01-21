@@ -1,7 +1,6 @@
 <?php
 
 namespace classes\Db;
-
 use \PDO;
 use PDOException;
 
@@ -54,11 +53,11 @@ class Database{
     /**
     * Método responsável por criar uma conexão com o banco de dados
     */
-    private function setConnection(){
+    private function setConnection() {
         try{
             $this->connection = new PDO('mysql:host='.self::HOST.';dbname='.self::NAME, self::USER, self::PASS);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        }catch(PDOException $e){
+        }catch(PDOException $e) {
             die('ERROR: '.$e->getMessage());
         }
     }
@@ -69,15 +68,14 @@ class Database{
     * @param  array  $params
     * @return PDOStatement
     */
-    public function execute($query, $params = []){
-        try{
+    public function execute($query, $params = []) {
+        try {
             $statement = $this->connection->prepare($query);
             $statement->execute($params);
             return $statement;
-        }catch(PDOException $e){
+        }catch(PDOException $e) {
             die('ERROR: '.$e->getMessage());
         }
-
     }
 
     /**
@@ -85,19 +83,15 @@ class Database{
     * @param  array $values [ field => value ]
     * @return integer ID inserido
     */
-    public function insert($values){
-        //var_dump($values) ;
+    public function insert($values) {
         //dados query
         $fields = array_keys($values);
         $binds = array_pad([], count($fields), '?');
-        //echo "<pre>"; print_r($fields); echo "</pre>"; exit;
-
         //Monta a query
         $query = 'INSERT INTO '.$this->table.' ('.implode(',',$fields).') VALUES ('.implode(',', $binds).')';
         //var_dump($values) ;
         //Executa o insert
         $this->execute($query, array_values($values));
-
         //Retorna o ID inserido
         return $this->connection->lastInsertId();
     }
@@ -110,7 +104,7 @@ class Database{
     * @param  string $fields
     * @return PDOStatement
     */
-    public function select($where = null, $order = null, $limit = null, $fields = '*'){
+    public function select($where = null, $order = null, $limit = null, $fields = '*') {
         //DADOS DA QUERY
         $where = strlen($where) ? 'WHERE '.$where : '';
         $order = strlen($order) ? 'ORDER BY '.$order : '';
@@ -118,7 +112,6 @@ class Database{
 
     //MONTA A QUERY
         $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.' '.$order.' '.$limit;
-
     //EXECUTA A QUERY
         return $this->execute($query);
     }
@@ -129,26 +122,21 @@ class Database{
     * @param  array $values [ field => value ]
     * @return boolean
     */
-    public function update($where,$values){
+    public function update($where,$values) {
         //echo "<pre>"; print_r($where); echo "</pre>"; exit;
         //DADOS DA QUERY
         $fields = array_keys($values);
-
         //MONTA A QUERY
         $query = 'UPDATE '.$this->table.' SET '.implode('=?,',$fields).' WHERE '.$where;
-
         //EXECUTAR A QUERY
         $this->execute($query,array_values($values));
-
         //RETORNA SUCESSO
         return true;
     }
 
-    public function delete($where){
+    public function delete($where) {
         $query = 'DELETE FROM '.$this->table.' WHERE '.$where;
-
         $this->execute($query);
-
         return true;
     }
 }

@@ -14,11 +14,11 @@ $update = true;
 //echo "<pre>"; print_r($_GET); echo "</pre>"; exit;
 
 //Consulta carro
-$obcarro = Carro::getCarro($_GET['id']);
+$obCarro = Carro::getCarro($_GET['id']);
 //Validação do carro
 
-if(!$obcarro instanceof Carro){
-    echo "<pre>"; print_r($obcarro); echo "</pre>"; exit;
+if(!$obCarro instanceof Carro){
+    echo "<pre>"; print_r($obCarro); echo "</pre>"; exit;
     header('location: index.php?status=erro');
     exit;
 }
@@ -32,28 +32,28 @@ if(isset($_POST['descricao']) || isset($_POST['placa']) || isset($_POST['codigoR
     !empty($_POST['km']) || !empty($_POST['marca']) || !empty($_POST['preco']) || !empty($_POST['precoFipe'])){
 
         $update                     = true;
-        $obcarro->descricao         = addslashes($_POST['descricao']);
-        $obcarro->placa             = addslashes($_POST['placa']);
-        $obcarro->codigoRenavam     = addslashes($_POST['codigoRenavam']);
-        $obcarro->anoModelo         = addslashes($_POST['anoModelo']);
-        $obcarro->anoFabricacao     = addslashes($_POST['anoFabricacao']);
-        $obcarro->cor               = addslashes($_POST['cor']);
-        $obcarro->km                = addslashes($_POST['km']);
-        $obcarro->marca             = addslashes($_POST['marca']);
-        $obcarro->preco             = addslashes($_POST['preco']);
-        $obcarro->precoFipe         = addslashes($_POST['precoFipe']);
-        /*$obcarro->arCondicionado  = addslashes($_POST['arCondicionado']);
-        $obcarro->airBag            = addslashes($_POST['airBag']);
-        $obcarro->cdPlayer          = addslashes($_POST['cdPlayer']);
-        $obcarro->direcaoHidraulica = addslashes($_POST['direcaoHidraulica']);
-        $obcarro->vidroEletrico     = addslashes($_POST['vidroEletrico']);
-        $obcarro->travaEletrica     = addslashes($_POST['travaEletrica']);
-        $obcarro->cambioAutomatico  = addslashes($_POST['cambioAutomatico']);
-        $obcarro->rodasLiga         = addslashes($_POST['rodasLiga']);
-        $obcarro->alarme            = addslashes($_POST['alarme']);
+        $obCarro->descricao         = addslashes($_POST['descricao']);
+        $obCarro->placa             = addslashes($_POST['placa']);
+        $obCarro->codigoRenavam     = addslashes($_POST['codigoRenavam']);
+        $obCarro->anoModelo         = addslashes($_POST['anoModelo']);
+        $obCarro->anoFabricacao     = addslashes($_POST['anoFabricacao']);
+        $obCarro->cor               = addslashes($_POST['cor']);
+        $obCarro->km                = addslashes($_POST['km']);
+        $obCarro->marca             = addslashes($_POST['marca']);
+        $obCarro->preco             = addslashes($_POST['preco']);
+        $obCarro->precoFipe         = addslashes($_POST['precoFipe']);
+        /*$obCarro->arCondicionado  = addslashes($_POST['arCondicionado']);
+        $obCarro->airBag            = addslashes($_POST['airBag']);
+        $obCarro->cdPlayer          = addslashes($_POST['cdPlayer']);
+        $obCarro->direcaoHidraulica = addslashes($_POST['direcaoHidraulica']);
+        $obCarro->vidroEletrico     = addslashes($_POST['vidroEletrico']);
+        $obCarro->travaEletrica     = addslashes($_POST['travaEletrica']);
+        $obCarro->cambioAutomatico  = addslashes($_POST['cambioAutomatico']);
+        $obCarro->rodasLiga         = addslashes($_POST['rodasLiga']);
+        $obCarro->alarme            = addslashes($_POST['alarme']);
         */
 
-        $obcarro->atualizar();
+        $obCarro->atualizar();
 
         header('location: index.php?status=success');
         exit;

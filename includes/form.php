@@ -3,7 +3,7 @@
     <a href="index.php">
             <button class="btn btn-success mt-4">Voltar</button>
         </a>
-    <form method="POST" action="cadastrar.php" nome="meuform" id="form1" onsubmit="return validar()">
+    <form method="POST" action="cadastrar.php">
         <div class="row">
             <div class="col-md-8">
                 <label for="inputemail">Descrição</label>
@@ -55,53 +55,50 @@
     <div class="container mt-4">
             <div class="form-check-inline">
                 <label class="form-check-label" for="arCondicionado">
-                <input type="checkbox" class="form-check-input" id="carCondicionado" name="arCondicionado" value="<?php echo intval(1);?>"> Ar Condionado
+                <input type="checkbox" class="form-check-input" id="carCondicionado" name="arCondicionado"> Ar Condionado
                 </label>
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="airBag">
-                <input type="checkbox" class="form-check-input" id="airBag" name="airBag" value="<?php echo intval(1);?>"> Air Bag
+                <input type="checkbox" class="form-check-input" id="airBag" name="airBag"> Air Bag
                 </label>
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="cdPlayer">
-                <input type="checkbox" class="form-check-input" id="cdPlayer" name="cdPlayer" value="<?php echo intval(1); ?>"> CD Player
+                <input type="checkbox" class="form-check-input" id="cdPlayer" name="cdPlayer"> CD Player
                 </label>
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="direcaoHidraulica">
-                <input type="checkbox" class="form-check-input" id="direcaoHidraulica" name="direcaoHidraulica" value="<?php echo intval(1);?>"> Direção Hidráulica
+                <input type="checkbox" class="form-check-input" id="direcaoHidraulica" name="direcaoHidraulica"> Direção Hidráulica
                 </label>
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="vidroEletrico">
-                <input type="checkbox" class="form-check-input" id="vidroEletrico" name="vidroEletrico" value="<?php echo intval(1);?>"> Vidro Elétrico
+                <input type="checkbox" class="form-check-input" id="vidroEletrico" name="vidroEletrico"> Vidro Elétrico
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="travaEletrica">
-                <input type="checkbox" class="form-check-input" id="travaEletrica" name="travaEletrica" value="<?php echo intval(1);?>"> Trava Elétrica
+                <input type="checkbox" class="form-check-input" id="travaEletrica" name="travaEletrica"> Trava Elétrica
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="cambioAutomatico">
-                <input type="checkbox" class="form-check-input" id="cambioAutomatico" name="cambioAutomatico" value="<?php echo intval(1);?>"> Câmbio Automático
+                <input type="checkbox" class="form-check-input" id="cambioAutomatico" name="cambioAutomatico"> Câmbio Automático
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="rodasLiga">
-                <input type="checkbox" class="form-check-input" id="rodasLiga" name="rodasLiga" value="<?php echo intval(1);?>"> Rodas de liga
+                <input type="checkbox" class="form-check-input" id="rodasLiga" name="rodasLiga"> Rodas de liga
             </div>
             <div class="form-check-inline">
                 <label class="form-check-label" for="alarme">
-                <input type="checkbox" class="form-check-input" id="alarme" name="alarme" "> Alarme
+                <input type="checkbox" class="form-check-input" id="alarme" name="alarme"> Alarme
             </div>
     </div>
-
     <section>
             <div class="">
                 <button type="submit" id="salvar" class="btn btn-success mt-4">Salvar</button>
             </div>
     </section>
-    </form>
-    <div><small style="color: red;" id="erro"></small></div>
     <script src="js/jquery-3.5.1.min.js"></script>
 
 </main>

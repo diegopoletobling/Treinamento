@@ -133,7 +133,7 @@ class Carro
     * Método responsável por cadastrar novos automóveis no banco
     * @return boolean
     */
-    public function Cadastrar(){
+    public function cadastrar() {
         $obDatabase = new Database('carros');
         $this->id = $obDatabase->insert([
                                 'descricao'         => $this->descricao,
@@ -165,8 +165,7 @@ class Carro
      *
      * @return boolean
      */
-    public function atualizar(){
-
+    public function atualizar() {
         //echo "<pre>"; print_r($this->id); echo "</pre>"; exit;
         return (new Database('carros'))->update('id = '.$this->id,[
                                                     'descricao'         => $this->descricao,
@@ -188,13 +187,13 @@ class Carro
                                                     'cambioAutomatico'  => intval($this->cambioAutomatico),
                                                     'rodasLiga'         => intval($this->rodasLiga),
                                                     'alarme'            => intval($this->alarme)*/
-
                                                 ]);
     }
 
-    public function excluir(){
+    public function excluir() {
         return (new Database('carros'))->delete('id = '.$this->id);
     }
+
     /**
      * Método responsável por obter os vaículos do banco de dados
      *
@@ -203,7 +202,7 @@ class Carro
      * @param string $limit
      * @return array
      */
-    public static function getCarros($where = null, $order = null, $limit = null){
+    public static function getCarros($where = null, $order = null, $limit = null) {
         return (new Database('carros'))->select($where, $order, $limit)
                                        ->fetchAll(PDO::FETCH_CLASS,self::class);
 
@@ -215,7 +214,7 @@ class Carro
      * @param string $where
      * @return integer
      */
-    public static function getQuantidadeCarros($where = null){
+    public static function getQuantidadeCarros($where = null) {
         return (new Database('carros'))->select($where,null,null,'COUNT(*) as qtd')
                                        ->fetchObject()
                                        ->qtd;
@@ -228,7 +227,7 @@ class Carro
      * @param integer $id
      * @return Carro
      */
-    public static function getCarro($id){
+    public static function getCarro($id) {
         return (new Database('carros'))->select('id = '.$id)
                                       ->fetchObject(self::class);
     }

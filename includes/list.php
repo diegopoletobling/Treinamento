@@ -1,12 +1,11 @@
 <?php
 
     $mesage = '';
-    if(isset($_GET['status'])){
+    if (isset($_GET['status'])) {
         switch ($_GET['status']) {
           case 'success':
             $mesage = '<div class="alert alert-success">Ação executada com sucesso!</div>';
             break;
-
           case 'error':
             $mesage = '<div class="alert alert-danger">Ação não executada!</div>';
             break;
@@ -14,7 +13,7 @@
     }
 
     $result = '';
-    foreach($carros as $carro){
+    foreach ($carros as $carro) {
         $result .= '<tr>
                         <td>'.$carro->id.'</td>
                         <td>'.$carro->descricao.'</td>
@@ -40,7 +39,7 @@
     //paginação
     $paginacao = '';
     $paginas = $obPagination->getPages();
-    foreach($paginas as $key=>$pagina){
+    foreach ($paginas as $key=>$pagina) {
         $class = $pagina['atual'] ? 'btn-primary' : 'btn-light';
         $paginacao .= '<a href="?pagina='.$pagina['pagina'].'">
                         <button type="button" class="btn '.$class.'">'.$pagina['pagina'].'</button>
